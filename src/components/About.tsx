@@ -8,20 +8,20 @@ const About: React.FC = () => {
         <div className="about-content">
           <div className="about-text">
             <p className="about-description">
-              I'm a passionate software engineer with 5+ years of experience in developing 
-              scalable web applications and innovative software solutions. My journey in 
-              technology began with a curiosity for how things work, which evolved into 
-              a career building products that make a difference.
+              <b>Experienced Software Engineer</b> and Team Leader with 8+ years of experience designing scalable software systems, leading
+              cross-functional teams, and delivering data-driven solutions. Strong background in automation, predictive analytics, and
+              business-aligned technology strategies. Recognized for driving innovation, enhancing operational efficiency, and mentoring
+              technical teams.
             </p>
             <p className="about-description">
-              I specialize in modern web technologies including React, TypeScript, and 
-              Node.js, with a strong foundation in cloud architecture and DevOps practices. 
+              I specialize in modern web technologies including C#, Javascript, R, React, TypeScript, and 
+              more, with a strong foundation in cloud architecture and DevOps practices. 
               My approach combines technical expertise with creative problem-solving to 
               deliver exceptional user experiences.
             </p>
             <div className="about-stats">
               <div className="stat">
-                <span className="stat-number">5+</span>
+                <span className="stat-number">8+</span>
                 <span className="stat-label">Years Experience</span>
               </div>
               <div className="stat">
@@ -43,9 +43,9 @@ const About: React.FC = () => {
                 <h3>Andres Arismendi</h3>
                 <p>Software Engineer</p>
                 <div className="profile-links">
-                  <a href="https://github.com" className="profile-link">GitHub</a>
-                  <a href="https://linkedin.com" className="profile-link">LinkedIn</a>
-                  <a href="mailto:alex@example.com" className="profile-link">Email</a>
+                  <a href="https://github.com/AndresArismendi" className="profile-link">GitHub</a>
+                  <a href="https://linkedin.com/in/andresarismendi" className="profile-link">LinkedIn</a>
+                  <a href="mailto:andres.c.arismendi" className="profile-link">Email</a>
                 </div>
               </div>
             </div>

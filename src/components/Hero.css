@@ -1,0 +1,135 @@
+.ide-frame .hero-visual {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.ide-window {
+  width: 520px;
+  background: #1e1e1e;
+  border-radius: 6px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  overflow: hidden;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #d4d4d4;
+}
+
+.ide-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.ide-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.ide-tab {
+  background: transparent;
+  padding: 6px 10px;
+  border-radius: 3px;
+  color: #9cdcfe;
+  font-size: 13px;
+}
+
+.ide-controls {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+.dot.red { background: #ff5f56; }
+.dot.yellow { background: #ffbd2e; }
+.dot.green { background: #27c93f; }
+
+.ide-body {
+  display: flex;
+  min-height: 220px;
+}
+
+.ide-sidebar {
+  width: 120px;
+  background: #252526;
+  padding: 12px 8px;
+  border-right: 1px solid rgba(255,255,255,0.03);
+}
+
+.file-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
+
+.file {
+  padding: 6px 8px;
+  color: #cfcfcf;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.file.active {
+  background: rgba(77, 161, 255, 0.12);
+  color: #9cdcfe;
+}
+
+.ide-editor {
+  flex: 1;
+  padding: 14px;
+  background: transparent;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #d4d4d4;
+  overflow: auto;
+}
+
+.code-animation {
+  white-space: pre;
+}
+
+.code-line { display: block; }
+.code-line.indent { padding-left: 16px; }
+
+.code-keyword { color: #569cd6; }
+.code-variable { color: #9cdcfe; }
+.code-string { color: #ce9178; }
+
+/* small responsive tweak */
+@media (max-width: 640px) {
+  .ide-window { width: 100%; }
+  .ide-sidebar { display: none; }
+}
+
+/* Floating animation for a subtle 'floating window' effect */
+@keyframes ide-float {
+  0% { transform: translateY(0) rotate(0deg); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+  50% { transform: translateY(-8px) rotate(-0.15deg); box-shadow: 0 18px 38px rgba(0,0,0,0.45); }
+  100% { transform: translateY(0) rotate(0deg); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+}
+
+.ide-window {
+  animation: ide-float 6s ease-in-out infinite;
+  will-change: transform, box-shadow;
+}
+
+/* Pause animation when user hovers (so it's not distracting) */
+.ide-window:hover {
+  animation-play-state: paused;
+}
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .ide-window { animation: none; }
+}
