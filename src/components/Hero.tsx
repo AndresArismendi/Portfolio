@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
                     </div>
                     <div className="code-line">
                       <span className="code-keyword">List</span>
-                      <span className="code-variable"> <span>&lt;</span>String<span>&gt;</span> Skills</span> = <span className="code-keyword">new List</span><span className="code-variable">{'<'}String{'>'}</span>;
+                      <span className="code-variable"> <span>&lt;</span>String<span>&gt;</span> Skills</span> = <span className="code-keyword">new List</span><span className="code-variable">{'<'}String{'>'}</span>
                     </div>
                     <div className="code-line">
                         {'{'}
