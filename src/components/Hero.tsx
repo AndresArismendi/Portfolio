@@ -45,13 +45,16 @@ const Hero: React.FC = () => {
                 <div className="ide-editor">
                   <div className="code-animation">
                     <div className="code-line">
-                      <span className="code-keyword">const</span>
-                      <span className="code-variable"> developer</span> =
+                      <span className="code-keyword">String</span>
+                      <span className="code-variable"> NameDev = </span>
                       <span className="code-string"> 'Andres Arismendi'</span>;
                     </div>
                     <div className="code-line">
-                      <span className="code-keyword">const</span>
-                      <span className="code-variable"> skills</span> = [
+                      <span className="code-keyword">List</span>
+                      <span className="code-variable"> <span>&lt;</span>String<span>&gt;</span> Skills</span> = <span className="code-keyword">new List</span><span className="code-variable">{'<'}String{'>'}</span>;
+                    </div>
+                    <div className="code-line">
+                        {'{'}
                     </div>
                     <div className="code-line indent">
                       <span className="code-string">'C#'</span>,
@@ -61,10 +64,7 @@ const Hero: React.FC = () => {
                     </div>
                     <div className="code-line indent">
                       <span className="code-string">'TypeScript'</span>,
-                    </div>
-                    <div className="code-line indent">
-                      <span className="code-string">'Node.js'</span>,
-                    </div>
+                    </div>                    
                     <div className="code-line indent">
                       <span className="code-string">'React'</span>,
                     </div>
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
                     <div className="code-line indent">
                       <span className="code-string">'R'</span>
                     </div>
-                    <div className="code-line">];</div>
+                    <div className="code-line">{'}'};</div>
                   </div>
                 </div>
               </div>
