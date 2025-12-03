@@ -44,7 +44,7 @@ const About: React.FC = () => {
                 <p>Software Engineer</p>
                 <div className="profile-links">
                   <a href="https://github.com/AndresArismendi" className="profile-link">GitHub</a>
-                  <a href="https://linkedin.com/in/andresarismendi" className="profile-link">LinkedIn</a>
+                  <a href="https://linkedin.com/in/andres-arismendi" className="profile-link">LinkedIn</a>
                   <a href="mailto:andres.c.arismendi" className="profile-link">Email</a>
                 </div>
               </div>
