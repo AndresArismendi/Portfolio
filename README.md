@@ -255,8 +255,8 @@ This project is open source and available under the MIT License.
 
 <div align="center">
 
-### Made with ❤️ by Andres Arismendi
+### Made by Andres Arismendi
 
-**[Portfolio](https://yourportfolio.com)** • **[GitHub](https://github.com)** • **[LinkedIn](https://linkedin.com)**
+**[Portfolio](https://www.andresarismendi.com)** • **[GitHub](https://github.com/AndresArismendi)** • **[LinkedIn](https://linkedin.com/in/Andres-Arismendi)**
 
 </div>"
