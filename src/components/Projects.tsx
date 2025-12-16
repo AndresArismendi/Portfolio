@@ -38,18 +38,17 @@ const Projects: React.FC = () => {
       description: "A responsive portfolio website built with modern web technologies and elegant animations.",
       technologies: ["React", "TypeScript", "Framer Motion", "CSS3"],
       image: "💼",
-      github: "https://github.com",
-      live: "https://example.com",
+      github: "https://github.com/AndresArismendi/Portfolio",
+      live: "https://www.AndresArismendi.com",
       featured: false
     },
     {
       id: 5,
       title: "Chat Application",
-      description: "Real-time chat application with user authentication, message history, and file sharing capabilities.",
-      technologies: ["React", "Socket.io", "Node.js", "MongoDB", "JWT"],
+      description: "Real-time chat application with user.",
+      technologies: ["React", "Socket.io", "Node.js"],
       image: "💬",
-      github: "https://github.com",
-      live: "https://example.com",
+      github: "https://github.com/AndresArismendi/ChatSocketIO",      
       featured: false
     },
     {
