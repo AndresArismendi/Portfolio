@@ -115,12 +115,12 @@
 /* Floating animation for a subtle 'floating window' effect */
 @keyframes ide-float {
   0% { transform: translateY(0) rotate(0deg); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
-  50% { transform: translateY(-8px) rotate(-0.15deg); box-shadow: 0 18px 38px rgba(0,0,0,0.45); }
+  50% { transform: translateY(-18px); box-shadow: 0 18px 38px rgba(0,0,0,0.45); }
   100% { transform: translateY(0) rotate(0deg); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
 }
 
 .ide-window {
-  animation: ide-float 6s ease-in-out infinite;
+  animation: ide-float 4s ease-in-out infinite;
   will-change: transform, box-shadow;
 }
 
