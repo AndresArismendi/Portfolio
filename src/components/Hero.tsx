@@ -79,13 +79,13 @@ const Hero: React.FC = () => {
                 <div className="ide-editor">
                   <div className="code-animation">
                     <div className="code-line">
-                      <span className="code-keyword">String</span>
-                      <span className="code-variable"> NameDev = </span>
-                      <span className="code-string"> 'Andres Arismendi'</span>;
+                      <span className="code-keyword">var</span> engineer = <span className="code-keyword">new</span> SoftwareEngineer
+                    <div className="code-line">{'{'}</div>                                         
+                      NameDev =
+                      <span className="code-string"> 'Andres Arismendi' </span>
                     </div>
-                    <div className="code-line">
-                      <span className="code-keyword">List</span>
-                      <span className="code-variable"> <span>&lt;</span>String<span>&gt;</span> Skills</span> = <span className="code-keyword">new List</span><span className="code-variable">{'<'}String{'>'}</span>
+                    <div className="code-line">                      
+                      Skills = <span className="code-keyword">new List</span><span className="code-variable">{'<'}String{'>'}</span>
                     </div>
                     <div className="code-line">
                         {'{'}
@@ -111,7 +111,12 @@ const Hero: React.FC = () => {
                     <div className="code-line indent">
                       <span className="code-string">'R'</span>
                     </div>
-                    <div className="code-line">{'}'};</div>
+                    <div className="code-line">{'},'}</div>                    
+                    Motto = <span className="code-string">'I turn coffee ☕ into code 🖥️ <br></br>(and sometimes bugs 🐛).'
+                    </span>
+                    <div className="code-line">{'};'}</div>
+                    
+                    engineer.<span className="code-variable">Introduce();</span>
                   </div>
                 </div>
               </div>

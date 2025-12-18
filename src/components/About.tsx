@@ -37,7 +37,7 @@ const About: React.FC = () => {
           <div className="about-image">
             <div className="profile-card">
               <div className="profile-avatar">
-                <div className="avatar-placeholder">AC</div>
+                <div className="avatar-placeholder">AA</div>
               </div>
               <div className="profile-info">
                 <h3>Andres Arismendi</h3>
