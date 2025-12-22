@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Hero: React.FC = () => {
+  const [activeFile, setActiveFile] = useState('Main.cs');
+
   return (
     <section id="home" className="hero ide-frame">
       <div className="hero-container">
@@ -58,7 +60,7 @@ const Hero: React.FC = () => {
             <div className="ide-window">
               <div className="ide-header">
                 <div className="ide-tabs">
-                  <div className="ide-tab">skills.json</div>
+                  <div className="ide-tab">AndresArismendi.sln</div>
                 </div>
                 <div className="ide-controls">
                   <span className="dot red" />
@@ -70,60 +72,114 @@ const Hero: React.FC = () => {
               <div className="ide-body">
                 <aside className="ide-sidebar">
                   <ul className="file-list">
-                    <li className="file active">skills.json</li>
-                    <li className="file">package.json</li>
-                    <li className="file">README.md</li>
+                    <li
+                      className={`file ${activeFile === 'Main.cs' ? 'active' : ''}`}
+                      onClick={() => setActiveFile('Main.cs')}
+                    >
+                      Main.cs
+                    </li>
+                    <li
+                      className={`file ${activeFile === 'Controller.cs' ? 'active' : ''}`}
+                      onClick={() => setActiveFile('Controller.cs')}
+                    >
+                      Controller.cs
+                    </li>
+                    <li
+                      className={`file ${activeFile === 'Readme.md' ? 'active' : ''}`}
+                      onClick={() => setActiveFile('Readme.md')}
+                    >
+                      Readme.md
+                    </li>
                   </ul>
                 </aside>
 
                 <div className="ide-editor">
-                  <div className="code-animation">
-                    <div className="code-line">
-                      <span className="code-keyword">var</span> engineer = <span className="code-keyword">new</span> SoftwareEngineer
-                    <div className="code-line">{'{'}</div>                                         
-                      NameDev =
-                      <span className="code-string"> 'Andres Arismendi' </span>
+                  {activeFile === 'Main.cs' ? (
+                    <div className="code-animation">
+                      <div className="code-line">
+                        <span className="code-keyword">var</span> engineer = <span className="code-keyword">new</span> SoftwareEngineer
+                      <div className="code-line">{'{'}</div>
+                        NameDev =
+                        <span className="code-string"> 'Andres Arismendi' </span>
+                      </div>
+                      <div className="code-line">
+                        Skills = <span className="code-keyword">new List</span><span className="code-variable">{'<'}String{'>'}</span>
+                      </div>
+                      <div className="code-line">{'{'}</div>
+                      <div className="code-line indent">
+                        <span className="code-string">'C#'</span>,
+                      </div>
+                      <div className="code-line indent">
+                        <span className="code-string">'JavaScript'</span>,
+                      </div>
+                      <div className="code-line indent">
+                        <span className="code-string">'TypeScript'</span>,
+                      </div>
+                      <div className="code-line indent">
+                        <span className="code-string">'React'</span>,
+                      </div>
+                      <div className="code-line indent">
+                        <span className="code-string">'Python'</span>,
+                      </div>
+                      <div className="code-line indent">
+                        <span className="code-string">'SQL'</span>,
+                      </div>
+                      <div className="code-line indent">
+                        <span className="code-string">'R'</span>
+                      </div>
+                      <div className="code-line">{'},'}</div>
+                      Motto = <span className="code-string">'I turn coffee ☕ into code 🖥️ <br></br>(and sometimes bugs 🐛).'
+                      </span>
+                      <div className="code-line">{'};'}</div>
+
+                      engineer.<span className="code-variable">Introduce();</span>
                     </div>
-                    <div className="code-line">                      
-                      Skills = <span className="code-keyword">new List</span><span className="code-variable">{'<'}String{'>'}</span>
+                  ) : activeFile === 'Controller.cs' ? (
+                    <div className="code-animation">
+                      <div className="code-line"><span className="code-keyword">using</span> System;</div>
+                      <div className="code-line"><span className="code-keyword">using</span> System.Collections.Generic;</div>
+                      <div className="code-line"><span className="code-keyword">using</span> System.Linq;</div>
+                      <div className="code-line"><span className="code-keyword">public class</span> SoftwareEngineer</div>
+
+                        <div className="code-line indent">
+                        <div className="code-line">{'{'}</div>
+                        <div className="code-line"><span className="code-keyword">public string</span> NameDev {'{'} <span className="code-keyword">get</span>; <span className="code-keyword">set</span>; {'}'} </div>
+                        <div className="code-line"><span className="code-keyword">public List<span className="code-variable">{'<'}string{'>'}</span></span> Skills {'{'} <span className="code-keyword">get</span>; <span className="code-keyword">set</span>; {'}'} </div>
+                        <div className="code-line"><span className="code-keyword">public string</span> Motto {'{'} <span className="code-keyword">get</span>; <span className="code-keyword">set</span>; {'}'} </div>
+                        <div className="code-line"><span className="code-keyword">public void</span> Introduce()</div>
+                        <div className="code-line">{'{'}</div>
+                            <div className="code-line indent"></div>
+                                <div className="code-line indent"><span className="code-console">Console</span><span className="code-writeline">.WriteLine</span>(<span className="code-string">$"👋 Hello, I'm </span>
+                                <div className="code-line indent">{'{'}'NameDev'{'}'}<span className="code-string">!"</span>);</div></div>
+                                <div className="code-line indent"><span className="code-console">Console</span><span className="code-writeline">.WriteLine</span>(<span className="code-string">"💻 Skills:"</span>);</div>
+                                <div className="code-line indent"><span className="code-for">foreach</span> (<span className="code-keyword">var</span> <span className="code-variable">skill</span> <span className="code-for">in</span> Skills)</div>
+                                <div className="code-line indent">{'{'}
+                                <div className="code-line indent"><span className="code-console">Console</span><span className="code-writeline">.WriteLine</span>(<span className="code-string">$" - </span>{'{'}'skill'{'}'}<span className="code-string">"</span>);</div></div>
+                                <div className="code-line indent">{'}'}</div>
+                                <div className="code-line indent"><span className="code-console">Console</span><span className="code-writeline">.WriteLine</span>();</div>
+                                <div className="code-line indent"><span className="code-console">Console</span><span className="code-writeline">.WriteLine</span>(<span className="code-string">$"🧠 Motto: </span>
+                                <div className="code-line indent">{'{'}'Motto'{'}'}<span className="code-string">"</span>);</div></div>
+                                <div className="code-line indent">{'}'}</div>
+                              </div>
+                              <div className="code-line indent">{'}'}</div>                      
+                          <div className="code-line">{'}'}</div>                    
+                      </div>
+                  ) : ( 
+                    <div className="code-animation">
+                      <div className="code-line"><span className="code-coment"># Readme</span></div>
+                      <div className="code-line">This is a demo file. Click other </div>
+                        <div className="code-line">files to view code.</div>
                     </div>
-                    <div className="code-line">
-                        {'{'}
-                    </div>
-                    <div className="code-line indent">
-                      <span className="code-string">'C#'</span>,
-                    </div>
-                    <div className="code-line indent">
-                      <span className="code-string">'JavaScript'</span>,
-                    </div>
-                    <div className="code-line indent">
-                      <span className="code-string">'TypeScript'</span>,
-                    </div>                    
-                    <div className="code-line indent">
-                      <span className="code-string">'React'</span>,
-                    </div>
-                    <div className="code-line indent">
-                      <span className="code-string">'Python'</span>,
-                    </div>
-                    <div className="code-line indent">
-                      <span className="code-string">'SQL'</span>,
-                    </div>
-                    <div className="code-line indent">
-                      <span className="code-string">'R'</span>
-                    </div>
-                    <div className="code-line">{'},'}</div>                    
-                    Motto = <span className="code-string">'I turn coffee ☕ into code 🖥️ <br></br>(and sometimes bugs 🐛).'
-                    </span>
-                    <div className="code-line">{'};'}</div>
-                    
-                    engineer.<span className="code-variable">Introduce();</span>
-                  </div>
-                </div>
-              </div>
+                  )
+                  }
+                
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+      
     </section>
   );
 };
