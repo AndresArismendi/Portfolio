@@ -11,7 +11,8 @@ const Hero: React.FC = () => {
             <h1 className="hero-title"> 
               <span className="greeting">Hello, I'm</span>
               <span className="name">Andres Arismendi</span>
-              <span className="title">Software Engineer</span>
+              <span className="title">Computer Engineer</span>
+              <span className="title">MSc in Computer Engineering</span>
             </h1>
             <p className="hero-description">
               Passionate about creating elegant solutions and building innovative applications. 
@@ -154,11 +155,11 @@ const Hero: React.FC = () => {
                                 <div className="code-line indent"><span className="code-console">Console</span><span className="code-writeline">.WriteLine</span>(<span className="code-string">"💻 Skills:"</span>);</div>
                                 <div className="code-line indent"><span className="code-for">foreach</span> (<span className="code-keyword">var</span> <span className="code-variable">skill</span> <span className="code-for">in</span> Skills)</div>
                                 <div className="code-line indent">{'{'}
-                                <div className="code-line indent"><span className="code-console">Console</span><span className="code-writeline">.WriteLine</span>(<span className="code-string">$" - </span>{'{'}'skill'{'}'}<span className="code-string">"</span>);</div></div>
+                                <div className="code-line indent"><span className="code-console">Console</span><span className="code-writeline">.WriteLine</span>(<span className="code-string">$" - </span>{'{'}skill{'}'}<span className="code-string">"</span>);</div></div>
                                 <div className="code-line indent">{'}'}</div>
                                 <div className="code-line indent"><span className="code-console">Console</span><span className="code-writeline">.WriteLine</span>();</div>
                                 <div className="code-line indent"><span className="code-console">Console</span><span className="code-writeline">.WriteLine</span>(<span className="code-string">$"🧠 Motto: </span>
-                                <div className="code-line indent">{'{'}'Motto'{'}'}<span className="code-string">"</span>);</div></div>
+                                <div className="code-line indent">{'{'}Motto{'}'}<span className="code-string">"</span>);</div></div>
                                 <div className="code-line indent">{'}'}</div>
                               </div>
                               <div className="code-line indent">{'}'}</div>                      

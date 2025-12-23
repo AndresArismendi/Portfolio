@@ -2,6 +2,8 @@
   display: flex;
   justify-content: center;
   padding: 1rem;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .ide-window {
@@ -10,8 +12,19 @@
   border-radius: 6px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   overflow: hidden;
+  overflow-x: hidden;
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: #d4d4d4;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .ide-window {
+    width: calc(100vw - 4rem);
+    max-width: 610px;
+    box-sizing: border-box;
+  }
 }
 
 .ide-header {
@@ -93,10 +106,17 @@
   line-height: 1.5;
   color: #d4d4d4;
   overflow: auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .code-animation {
-  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .code-line { display: block; }
@@ -111,9 +131,53 @@
 .code-for { color: #d8a0df; }
 
 /* small responsive tweak */
-@media (max-width: 640px) {
-  .ide-window { width: 100%; }
+@media (max-width: 768px) {
+  .ide-frame .hero-visual {
+    padding: 0.5rem;
+  }
+  .ide-window {
+    width: calc(100vw - 3rem);
+    max-width: 100%;
+    box-sizing: border-box;
+  }
   .ide-sidebar { display: none; }
+}
+
+@media (max-width: 640px) {
+  .ide-frame .hero-visual {
+    padding: 0.5rem;
+  }
+  .ide-window {
+    width: calc(100vw - 2rem);
+    max-width: 100%;
+    min-height: 200px;
+    box-sizing: border-box;
+  }
+  .ide-sidebar { display: none; }
+  .ide-body {
+    min-height: 180px;
+  }
+  .ide-editor {
+    padding: 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ide-frame .hero-visual {
+    padding: 0.25rem;
+  }
+  .ide-window {
+    width: calc(100vw - 1.5rem);
+    max-width: 100%;
+  }
+  .ide-editor {
+    padding: 8px;
+    font-size: 10px;
+  }
+  .code-line {
+    font-size: 10px;
+  }
 }
 
 /* Floating animation for a subtle 'floating window' effect */
