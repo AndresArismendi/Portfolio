@@ -12,13 +12,11 @@ const Hero: React.FC = () => {
               <span className="greeting">Hello, I'm</span>
               <span className="name">Andres Arismendi</span>
               <span className="title">Computer Engineer</span>
-              <span className="title">MSc in Computer Engineering</span>
+              <span className="title">MSc in Computer Science</span>
             </h1>
             <p className="hero-description">
               Passionate about creating elegant solutions and building innovative applications. 
               Specialized in full-stack development with a focus on user experience and scalable architecture.
-
-
             </p>
             
             <div className="hero-social-icons">
