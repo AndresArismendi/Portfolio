@@ -8,7 +8,7 @@ const Projects: React.FC = () => {
       description: "A web application for scraping and analyzing Chilean stock market data. Built with R and Shiny, it provides interactive visualizations and price analysis by company and time period.",
       technologies: ["R", "Shiny"],
       image: "📊",
-      github: "https://github.com/AndresArismendi",
+      github: "https://github.com/AndresArismendi/ShinyAppScrappingChileanStock",
       live: "https://xumwa2-andr0s-arismendi.shinyapps.io/andres_arismendi-aidasofia_adrian-shiny/",
       featured: true
     },
