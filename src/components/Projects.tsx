@@ -4,12 +4,12 @@ const Projects: React.FC = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce platform built with React, Node.js, and PostgreSQL. Features include user authentication, product management, shopping cart, and payment integration.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe", "Redux"],
-      image: "🛒",
-      github: "https://github.com",
-      live: "https://example.com",
+      title: "Chilean Stock Analysis and Scraping",
+      description: "A web application for scraping and analyzing Chilean stock market data. Built with R and Shiny, it provides interactive visualizations and price analysis by company and time period.",
+      technologies: ["R", "Shiny"],
+      image: "📊",
+      github: "https://github.com/AndresArismendi",
+      live: "https://xumwa2-andr0s-arismendi.shinyapps.io/andres_arismendi-aidasofia_adrian-shiny/",
       featured: true
     },
     {

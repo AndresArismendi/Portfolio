@@ -149,7 +149,7 @@ const Hero: React.FC = () => {
                         <div className="code-line">{'{'}</div>
                             <div className="code-line indent"></div>
                                 <div className="code-line indent"><span className="code-console">Console</span><span className="code-writeline">.WriteLine</span>(<span className="code-string">$"👋 Hello, I'm </span>
-                                <div className="code-line indent">{'{'}'NameDev'{'}'}<span className="code-string">!"</span>);</div></div>
+                                <div className="code-line indent">{'{'}NameDev{'}'}<span className="code-string">!"</span>);</div></div>
                                 <div className="code-line indent"><span className="code-console">Console</span><span className="code-writeline">.WriteLine</span>(<span className="code-string">"💻 Skills:"</span>);</div>
                                 <div className="code-line indent"><span className="code-for">foreach</span> (<span className="code-keyword">var</span> <span className="code-variable">skill</span> <span className="code-for">in</span> Skills)</div>
                                 <div className="code-line indent">{'{'}
