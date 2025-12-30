@@ -99,35 +99,35 @@ const Hero: React.FC = () => {
                         <span className="code-keyword">var</span> engineer = <span className="code-keyword">new</span> SoftwareEngineer
                       <div className="code-line">{'{'}</div>
                         NameDev =
-                        <span className="code-string"> 'Andres Arismendi' </span>
+                        <span className="code-string"> "Andres Arismendi"</span>,
                       </div>
                       <div className="code-line">
-                        Skills = <span className="code-keyword">new List</span><span className="code-variable">{'<'}String{'>'}</span>
+                        Skills = <span className="code-keyword">new List</span><span className="code-variable">{'<'}string{'>'}</span>
                       </div>
                       <div className="code-line">{'{'}</div>
                       <div className="code-line indent">
-                        <span className="code-string">'C#'</span>,
+                        <span className="code-string">"C#"</span>,
                       </div>
                       <div className="code-line indent">
-                        <span className="code-string">'JavaScript'</span>,
+                        <span className="code-string">"JavaScript"</span>,
                       </div>
                       <div className="code-line indent">
-                        <span className="code-string">'TypeScript'</span>,
+                        <span className="code-string">"TypeScript"</span>,
                       </div>
                       <div className="code-line indent">
-                        <span className="code-string">'React'</span>,
+                        <span className="code-string">"React"</span>,
                       </div>
                       <div className="code-line indent">
-                        <span className="code-string">'Python'</span>,
+                        <span className="code-string">"Python"</span>,
                       </div>
                       <div className="code-line indent">
-                        <span className="code-string">'SQL'</span>,
+                        <span className="code-string">"SQL"</span>,
                       </div>
                       <div className="code-line indent">
-                        <span className="code-string">'R'</span>
+                        <span className="code-string">"R"</span>
                       </div>
                       <div className="code-line">{'},'}</div>
-                      Motto = <span className="code-string">'I turn coffee ☕ into code 🖥️ <br></br>(and sometimes bugs 🐛).'
+                      Motto = <span className="code-string">"I turn coffee ☕ into code<br></br>(and sometimes bugs 🐛)."
                       </span>
                       <div className="code-line">{'};'}</div>
 
