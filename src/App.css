@@ -159,13 +159,12 @@ body {
 }
 
 .hero-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
   position: relative;
   z-index: 1;
   width: 100%;
-  max-width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
 }
