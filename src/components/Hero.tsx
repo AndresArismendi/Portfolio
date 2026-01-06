@@ -1,10 +1,86 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const Hero: React.FC = () => {
   const [activeFile, setActiveFile] = useState('Main.cs');
+  const [isSun, setIsSun] = useState(false);
+  const moonRef = useRef<HTMLDivElement>(null);
+
+  const handleMoonClick = () => {
+    setIsSun(!isSun);
+  };
+
+  useEffect(() => {
+    const moon = moonRef.current;
+    if (!moon) return;
+
+    let angle = 0;
+    let animationId: number;
+    const moonSize = 20; // Moon width/height in pixels
+
+    const calculateRadius = () => {
+      const centerX = window.innerWidth / 4;
+      const centerY = window.innerHeight / 4;
+      
+      // Calculate distances from center to each edge
+      const distToLeft = centerX;
+      const distToRight = window.innerWidth - centerX;
+      const distToTop = centerY;
+      const distToBottom = window.innerHeight - centerY;
+      
+      // Find the minimum distance (to ensure moon stays within bounds)
+      // Subtract moonSize/2 to account for moon's radius
+      const maxRadius = Math.min(
+        distToLeft,
+        distToRight,
+        distToTop,
+        distToBottom
+      ) - moonSize / 2;
+      
+      // Return a safe radius (you can multiply by a factor like 0.8 to add padding)
+      return Math.max(maxRadius, 50); // Minimum radius of 50px
+    };
+
+    let radius = calculateRadius();
+    let centerX = window.innerWidth / 2;
+    let centerY = window.innerHeight / 4;
+
+    const moveMoon = () => {
+      if (!moon) return;
+      const x = centerX + radius * Math.cos(angle);
+      const y = centerY + radius * Math.sin(angle);
+      moon.style.transform = `translate(${x}px, ${y}px)`;
+      angle += 0.004; // Speed of movement
+      animationId = requestAnimationFrame(moveMoon);
+    };
+
+    moveMoon();
+
+    // Handle window resize
+    const handleResize = () => {
+      // Recalculate radius and center on resize
+      radius = calculateRadius();
+      centerX = window.innerWidth / 4;
+      centerY = window.innerHeight / 4;
+    };
+    
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+    };
+  }, []);
 
   return (
     <section id="home" className="hero ide-frame">
+      <div 
+        className={isSun ? "moon sun" : "moon"} 
+        ref={moonRef}
+        onClick={handleMoonClick}
+      >
+      </div>
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-text">
