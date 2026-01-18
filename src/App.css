@@ -145,7 +145,42 @@ body {
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
+  transition: background 0.5s ease;
+  /* Smooth transition for background */
 }
+
+/* Day Mode Styles */
+.hero.day {
+  background: linear-gradient(135deg, #e0f7fa 0%, #87ceeb 50%, #4facfe 100%);
+}
+
+.hero.day .hero-title,
+.hero.day .hero-description,
+.hero.day .title {
+  color: #1e293b;
+}
+
+.hero.day .greeting {
+  color: #0284c7;
+}
+
+.hero.day .name {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero.day .hero-description {
+  color: #334155;
+}
+
+.hero.day::before {
+  /* Darker grid for light background */
+  filter: invert(1);
+  opacity: 0.1;
+}
+
 
 .hero::before {
   content: '';
@@ -194,6 +229,7 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   word-break: break-word;
+  transition: color 0.5s ease;
 }
 
 .greeting {
@@ -201,6 +237,7 @@ body {
   font-size: 1.2rem;
   color: #667eea;
   margin-bottom: 0.5rem;
+  transition: color 0.5s ease;
 }
 
 .name {
@@ -210,6 +247,8 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 0.5rem;
+  transition: opacity 0.5s ease, background 0.5s ease;
+  /* Transition for gradient text is tricky, strict color might not work */
 }
 
 .title {
@@ -217,6 +256,7 @@ body {
   font-size: 2rem;
   color: #94a3b8;
   font-weight: 400;
+  transition: color 0.5s ease;
 }
 
 .hero-description {
@@ -227,6 +267,7 @@ body {
   word-wrap: break-word;
   overflow-wrap: break-word;
   max-width: 100%;
+  transition: color 0.5s ease;
 }
 
 .hero-buttons {

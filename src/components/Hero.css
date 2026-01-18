@@ -54,7 +54,8 @@
   transition: background 0.5s ease, box-shadow 0.5s ease, transform 0.3s ease;
 }
 
-.moon.sun::before {
+/* Base state for sun rays (hidden on moon) */
+.moon::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -62,6 +63,19 @@
   border-radius: 50%;
   background: radial-gradient(circle, transparent 30%, rgba(255, 215, 0, 0.3) 50%, transparent 70%);
   animation: sunRays 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.moon.sun::before {
+  opacity: 1;
+}
+
+/* Hide moon hover pulse when it's a sun */
+.moon.sun:hover::after {
+  content: none;
+  display: none;
 }
 
 .moon.sun:hover {

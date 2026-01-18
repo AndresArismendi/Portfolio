@@ -13,60 +13,94 @@ const Hero: React.FC = () => {
     const moon = moonRef.current;
     if (!moon) return;
 
-    let angle = 0;
+    let angle = Math.PI; // Start from the left
     let animationId: number;
-    const moonSize = 10; // Moon width/height in pixels
+    const moonSize = 20; // Matches CSS width
+
+    // State for mouse parallax
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let currentOffsetX = 0;
+    let currentOffsetY = 0;
 
     const calculateRadius = () => {
+      // Original logic for bounds
       const centerX = window.innerWidth / 4;
       const centerY = window.innerHeight / 4;
 
-      // Calculate distances from center to each edge
       const distToLeft = centerX;
       const distToRight = window.innerWidth - centerX;
       const distToTop = centerY;
       const distToBottom = window.innerHeight - centerY;
 
-      // Find the minimum distance (to ensure moon stays within bounds)
-      // Subtract moonSize/2 to account for moon's radius
       const maxRadius = Math.min(
-        distToLeft,
-        distToRight,
-        distToTop,
-        distToBottom
+        distToLeft, distToRight, distToTop, distToBottom
       ) - moonSize / 2;
 
-      // Return a safe radius (you can multiply by a factor like 0.8 to add padding)
-      return Math.max(maxRadius, 50); // Minimum radius of 50px
+      return Math.max(maxRadius, 50);
     };
 
     let radius = calculateRadius();
+    // User asked for elliptical trajectory.
+    // Use slightly different radii for x and y to create an ellipse.
+    // A 1.2 ratio on X makes it wider than it is tall.
+    let radiusX = radius * 1.5;
+    let radiusY = radius;
+
     let centerX = window.innerWidth / 2;
     let centerY = window.innerHeight / 4;
 
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    };
+
     const moveMoon = () => {
       if (!moon) return;
-      const x = centerX + radius * Math.cos(angle);
-      const y = centerY + radius * Math.sin(angle);
+
+      // 1. Calculate Orbit Position (Ellipse)
+      const orbitX = radiusX * Math.cos(angle);
+      const orbitY = radiusY * Math.sin(angle);
+
+      // 2. Calculate Parallax Offset (Light follow)
+      // center of screen as the "null" point for mouse
+      const screenCX = window.innerWidth / 2;
+      const screenCY = window.innerHeight / 2;
+
+      // Target offset is distance from center * factor
+      const targetOffsetX = (mouseX - screenCX) * 0.1; // 10% movement influence
+      const targetOffsetY = (mouseY - screenCY) * 0.1;
+
+      // Lerp current offset towards target
+      currentOffsetX += (targetOffsetX - currentOffsetX) * 0.05;
+      currentOffsetY += (targetOffsetY - currentOffsetY) * 0.05;
+
+      // 3. Combine
+      const x = centerX + orbitX + currentOffsetX;
+      const y = centerY + orbitY + currentOffsetY;
+
       moon.style.transform = `translate(${x}px, ${y}px)`;
-      angle += 0.004; // Speed of movement
+
+      angle += 0.004; // Original speed
       animationId = requestAnimationFrame(moveMoon);
     };
 
     moveMoon();
 
-    // Handle window resize
     const handleResize = () => {
-      // Recalculate radius and center on resize
       radius = calculateRadius();
-      centerX = window.innerWidth / 4;
+      radiusX = radius * 1.5; // Maintain ratio
+      radiusY = radius;
+      centerX = window.innerWidth / 2;
       centerY = window.innerHeight / 4;
     };
 
     window.addEventListener('resize', handleResize);
+    window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', handleMouseMove);
       if (animationId) {
         cancelAnimationFrame(animationId);
       }
@@ -74,7 +108,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section id="home" className="hero ide-frame">
+    <section id="home" className={`hero ide-frame ${isSun ? 'day' : ''}`}>
       <div
         className={isSun ? "moon sun" : "moon"}
         ref={moonRef}
