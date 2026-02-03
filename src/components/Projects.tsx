@@ -23,14 +23,16 @@ const Projects: React.FC = () => {
       featured: true
     },
     {
+
       id: 3,
-      title: "Weather Dashboard",
-      description: "A weather dashboard that displays current weather conditions and forecasts using OpenWeatherMap API with beautiful visualizations.",
-      technologies: ["React", "Chart.js", "OpenWeatherMap API", "CSS3"],
-      image: "🌤️",
-      github: "https://github.com",
-      live: "https://example.com",
+      title: "Civic Test 2025 - 128 Questions",
+      description: "A web application for studying the 128 questions for the Canadian citizenship test in 2025.",
+      technologies: ["React", "CSS3"],
+      image: "📝",
+      github: "https://github.com/AndresArismendi/USA_128_Civics_Questions_2025",
+      live: "https://pink-grouse-158887.hostingersite.com/",
       featured: false
+
     },
     {
       id: 4,
@@ -48,19 +50,20 @@ const Projects: React.FC = () => {
       description: "Real-time chat application with user.",
       technologies: ["React", "Socket.io", "Node.js"],
       image: "💬",
-      github: "https://github.com/AndresArismendi/ChatSocketIO",      
+      github: "https://github.com/AndresArismendi/ChatSocketIO",
       featured: false
     },
     {
       id: 6,
-      title: "Recipe Finder",
-      description: "A recipe discovery app that helps users find recipes based on available ingredients and dietary preferences.",
-      technologies: ["React", "Spoonacular API", "CSS3", "Local Storage"],
-      image: "🍳",
+      title: "Weather Dashboard",
+      description: "A weather dashboard that displays current weather conditions and forecasts using OpenWeatherMap API with beautiful visualizations.",
+      technologies: ["React", "Chart.js", "OpenWeatherMap API", "CSS3"],
+      image: "🌤️",
       github: "https://github.com",
       live: "https://example.com",
       featured: false
     }
+
   ];
 
   return (
@@ -93,7 +96,7 @@ const Projects: React.FC = () => {
             </div>
           ))}
         </div>
-        
+
         <div className="projects-cta">
           <p>Interested in seeing more of my work?</p>
           <a href="https://github.com" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
