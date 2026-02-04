@@ -26,7 +26,7 @@ const Projects: React.FC = () => {
 
       id: 3,
       title: "Civic Test 2025 - 128 Questions",
-      description: "A web application for studying the 128 questions for the Canadian citizenship test in 2025.",
+      description: "A web application for studying the 128 questions for the USA citizenship test in 2025.",
       technologies: ["React", "CSS3"],
       image: "📝",
       github: "https://github.com/AndresArismendi/USA_128_Civics_Questions_2025",
