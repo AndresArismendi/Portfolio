@@ -30,7 +30,7 @@ const Projects: React.FC = () => {
       technologies: ["React", "CSS3"],
       image: "📝",
       github: "https://github.com/AndresArismendi/USA_128_Civics_Questions_2025",
-      live: "https://pink-grouse-158887.hostingersite.com/",
+      live: "https://mycivics128.com/",
       featured: false
 
     },
